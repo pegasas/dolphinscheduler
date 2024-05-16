@@ -129,6 +129,17 @@ externalDatabase:
   # -- The driverClassName of external database
   driverClassName: "org.postgresql.Driver"
 
+datasource:
+  profile: postgresql
+  config:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/dolphinscheduler
+    username: root
+    password: root
+    hikari:
+      connection-test-query: select 1
+      pool-name: DolphinScheduler
+
 zookeeper:
   # -- If not exists external registry, the zookeeper registry will be used by default.
   enabled: true
@@ -794,7 +805,6 @@ alert:
       labels: {}
       # -- serviceMonitor.annotations ServiceMonitor annotations
       annotations: {}
-
 
 api:
   # -- Enable or disable the API-Server component
